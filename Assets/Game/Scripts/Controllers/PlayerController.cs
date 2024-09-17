@@ -152,10 +152,9 @@ namespace MultiTool
             _rigidbody2D.velocity = moveVelocity;
             if(moveVelocity.x != 0)
             {
-                _spriteRenderer.flipX = moveVelocity.x > 0;
+                _spriteRenderer.flipX = moveVelocity.x < 0;
             }
 
-            _playerAnimation.SetJump(Mathf.Abs(moveVelocity.y) > 1f);
             _playerAnimation.SetWalk(Mathf.Abs(moveVelocity.x) > 1f);
         }
 
@@ -167,6 +166,7 @@ namespace MultiTool
             {
                 _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _jumpVelocity) * _jumpVelocityCurve.Evaluate(Time.time);
                 _audioSourceJump.Play();
+                _playerAnimation.SetJump();
 
             }
         }
@@ -243,13 +243,13 @@ namespace MultiTool
 
         #region Interaction
 
-        public void GetDamage(int val)
+        public void Mine()
         {
             if(_currentForm != null)
             {
 
                 _playerAnimation.Mine();
-                _currentForm.GetDamage(val);
+                _currentForm.GetDamage(1);
                 _lastMineTime = Time.time;
                 UIController.Instance.SetStrengthValue(_currentForm.Index, _currentForm.Strength);
             }

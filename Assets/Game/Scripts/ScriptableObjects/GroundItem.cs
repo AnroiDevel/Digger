@@ -20,6 +20,11 @@ namespace MultiTool
         private bool _startWay = false;
 
 
+        private void Start()
+        {
+            Init();
+        }
+
         public void Init()
         {
             _player = PlayerController.Instance.transform;

@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -129,10 +129,10 @@ TextureImporter:
       name: Item_Sand_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1024
-        height: 1024
+        x: 75
+        y: 263
+        width: 852
+        height: 581
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,6 +143,28 @@ TextureImporter:
       bones: []
       spriteID: 5ebda8180c218a010800000000000000
       internalID: 1200229918710619109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Sand_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cacacfac497a2164e99215371dd5c7bf
+      internalID: -1071325361
       vertices: []
       indices: 
       edges: []
@@ -162,6 +184,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Item_Sand_0: 1200229918710619109
+      Item_Sand_1: -1071325361
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

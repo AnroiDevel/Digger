@@ -15,8 +15,8 @@ MonoBehaviour:
   AllForms:
   - _formType: 0
     _sizeInTiles: {x: 2, y: 2}
-    _sprite: {fileID: 21300000, guid: 2cffc2f5348c59f46bfb2c93a19e87f1, type: 3}
-    _icon: {fileID: 21300000, guid: e5a0adc8a133e864b97bd155bc283843, type: 3}
+    _sprite: {fileID: 21300000, guid: c190c973485e34c45b98e411a2638b4d, type: 3}
+    _icon: {fileID: 21300000, guid: c190c973485e34c45b98e411a2638b4d, type: 3}
     _tileHarvestables:
     - _tileType: 0
       _harvestType: 1
@@ -29,7 +29,7 @@ MonoBehaviour:
     - _tileType: 3
       _harvestType: 2
     _upgradeJson: {fileID: 4900000, guid: 61602a4e683a00e4496514e0db38b26a, type: 3}
-    _runtimeAnimatorController: {fileID: 9100000, guid: ecdd60e0cc020b8479df99e16ce56e0f, type: 2}
+    _runtimeAnimatorController: {fileID: 9100000, guid: 199c8a93bc580b7459b54c33218b2c98, type: 2}
     _damage: 1
     _extractedResourceAmount: 1
     _cost: 1
@@ -37,8 +37,8 @@ MonoBehaviour:
     _durability: 100
   - _formType: 1
     _sizeInTiles: {x: 2, y: 2}
-    _sprite: {fileID: 21300000, guid: bf1997390815f9e4bbac0a0534012ebd, type: 3}
-    _icon: {fileID: 21300000, guid: 2fe6ff01167b44842ae380ac30cc45f7, type: 3}
+    _sprite: {fileID: 21300000, guid: 41ff8616a08affc4193e4b18d2ddb2de, type: 3}
+    _icon: {fileID: 21300000, guid: 41ff8616a08affc4193e4b18d2ddb2de, type: 3}
     _tileHarvestables:
     - _tileType: 0
       _harvestType: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
     - _tileType: 3
       _harvestType: 2
     _upgradeJson: {fileID: 4900000, guid: 61602a4e683a00e4496514e0db38b26a, type: 3}
-    _runtimeAnimatorController: {fileID: 9100000, guid: 4cb739363164ce54cbf690c2f8d48cac, type: 2}
+    _runtimeAnimatorController: {fileID: 9100000, guid: 32b7d3f5a81733c42b9d43f4931ea334, type: 2}
     _damage: 1
     _extractedResourceAmount: 1
     _cost: 1
@@ -59,8 +59,8 @@ MonoBehaviour:
     _durability: 200
   - _formType: 2
     _sizeInTiles: {x: 2, y: 2}
-    _sprite: {fileID: 21300000, guid: 9fa927e424c004e4b9cce309646bd147, type: 3}
-    _icon: {fileID: 21300000, guid: 2c3df632de15bab4f9c11b1c7a25e35e, type: 3}
+    _sprite: {fileID: 21300000, guid: ed3ddfd26c75e144cbbe5f48dc50ee6e, type: 3}
+    _icon: {fileID: 21300000, guid: ed3ddfd26c75e144cbbe5f48dc50ee6e, type: 3}
     _tileHarvestables:
     - _tileType: 0
       _harvestType: 2
@@ -73,7 +73,7 @@ MonoBehaviour:
     - _tileType: 3
       _harvestType: 1
     _upgradeJson: {fileID: 4900000, guid: 61602a4e683a00e4496514e0db38b26a, type: 3}
-    _runtimeAnimatorController: {fileID: 9100000, guid: 59a7d71bef0d2794a8be185fe981ad3c, type: 2}
+    _runtimeAnimatorController: {fileID: 9100000, guid: 6121ca43af600624691e37b1391ca3c1, type: 2}
     _damage: 1
     _extractedResourceAmount: 1
     _cost: 1
