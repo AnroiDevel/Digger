@@ -24,74 +24,76 @@ namespace MultiTool
 
             HighlightTileUnderCursor();
 
-            if(Input.GetMouseButtonDown(0)) // Проверка нажатия левой кнопки мыши
-            {
-                HandleTileClick();
-            }
         }
 
         private void HighlightTileUnderCursor()
         {
-            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int tilePos = _tilemap.WorldToCell(mouseWorldPos);
+            Vector3Int tilePos = GetTilePositionUnderCursor();
 
             if(_tilemap.HasTile(tilePos))
             {
-                // Убираем выделение с предыдущего тайла
-                if(_previousHighlightObject != null && _previousHighlightPos != tilePos)
-                {
-                    _previousHighlightObject.GetComponent<SpriteRenderer>().enabled = false;
-                }
+                HighlightCurrentTile(tilePos);
 
-                // Выделяем текущий тайл
-                GameObject highlightObject = _tilemap.GetInstantiatedObject(tilePos);
-                if(highlightObject != null)
+                if(Input.GetMouseButtonUp(0))
                 {
-                    if(highlightObject.TryGetComponent(out SpriteRenderer spriteRenderer))
-                    {
-                        var tm = highlightObject.GetComponentInChildren<TextMesh>();
-                        if(tm != null)
-                        {
-                            spriteRenderer.color = tm.color;
-                            //if(tm.color == Color.green)
-                            //{
-                            //    spriteRenderer.color = Color.green;
-                            //}
-                            //else if(tm.color == Color.yellow)
-                            //{
-                            //    spriteRenderer.color = Color.yellow;
-                            //}
-                            //else
-                            //{
-                            //    spriteRenderer.color = Color.red;
-                            //}
-                        }
-
-                        spriteRenderer.enabled = true;
-                        _previousHighlightPos = tilePos;
-                        _previousHighlightObject = highlightObject;
-                    }
+                    HandleTileClick(tilePos);
                 }
-                else
-                {
-                    _previousHighlightObject = null;
-                }
-
             }
-            else if(_previousHighlightObject != null)
+            else
             {
-                // Убираем выделение с предыдущего тайла
+                ClearPreviousHighlight();
+            }
+        }
+
+        private Vector3Int GetTilePositionUnderCursor()
+        {
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            return _tilemap.WorldToCell(mouseWorldPos);
+        }
+
+        private void HighlightCurrentTile(Vector3Int tilePos)
+        {
+            if(_previousHighlightObject != null && _previousHighlightPos != tilePos)
+            {
+                ClearPreviousHighlight();
+            }
+
+            GameObject highlightObject = _tilemap.GetInstantiatedObject(tilePos);
+
+            if(highlightObject != null && highlightObject.TryGetComponent(out SpriteRenderer spriteRenderer))
+            {
+                SetHighlightColor(highlightObject, spriteRenderer);
+                spriteRenderer.enabled = true;
+
+                _previousHighlightPos = tilePos;
+                _previousHighlightObject = highlightObject;
+            }
+            else
+            {
+                _previousHighlightObject = null;
+            }
+        }
+
+        private void SetHighlightColor(GameObject highlightObject, SpriteRenderer spriteRenderer)
+        {
+            var tm = highlightObject.GetComponentInChildren<TextMesh>();
+            if(tm != null)
+            {
+                spriteRenderer.color = tm.color;
+            }
+        }
+
+        private void ClearPreviousHighlight()
+        {
+            if(_previousHighlightObject != null)
+            {
                 _previousHighlightObject.GetComponent<SpriteRenderer>().enabled = false;
                 _previousHighlightObject = null;
             }
         }
 
-
-        private void HandleTileClick()
+        private void HandleTileClick(Vector3Int tilePos)
         {
-            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int tilePos = _tilemap.WorldToCell(mouseWorldPos);
-
             if(_tilemap.HasTile(tilePos))
             {
                 int flip = tilePos.x + 0.5f > _playerController.transform.position.x ? 1 : -1;

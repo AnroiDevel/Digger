@@ -4,7 +4,7 @@ namespace MultiTool
 {
     public class PlayerAnimation : MonoBehaviour
     {
-        private const string JumpTriggerName = "IsJump";
+        private const string JumpTriggerName = "Jump";
         private const string WalkTriggerName = "IsWalk";
         private const string StartTeleport = "StartTeleport";
         private const string EndTeleport = "EndTeleport";
@@ -18,9 +18,9 @@ namespace MultiTool
             _animator = GetComponent<Animator>();
         }
 
-        public void SetJump(bool isJumping)
+        public void SetJump()
         {
-            _animator.SetBool(JumpTriggerName, isJumping);
+            _animator.SetTrigger(JumpTriggerName);
         }
 
         public void SetWalk(bool isWalking)
