@@ -88,9 +88,9 @@ namespace MultiTool
             GameObject tileGO = _tilemap.GetInstantiatedObject(pos);
             if(tileGO == null)
                 return;
-
-            tileGO.SetActive(false);
-            _tileGODictionary[pos] = tileGO;
+            var finish = tileGO.GetComponent<Finish>();
+            if(!finish)
+                _tileGODictionary[pos] = tileGO;
 
             var animController = _tileData.GetTileAnimator(tile.name);
             if(animController != null)
